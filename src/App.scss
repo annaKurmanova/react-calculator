@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --dark-purple: #b78fcb;
+  --light-purple: #cb99c7;
+  --dark-pink: #efb8cd;
+  --light-pink: #ffc8d8;
+  --deep-pink: #ff91ae;
+  --box-shadow: 0px 1px 4px 1px rgba(183, 143, 203, 0.45);
+  --purple-border: 2px solid var(--dark-purple);
+  --rounded-border: 0.7rem;
+  --font: "Roboto", sans-serif;
+}
+
+html,
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+.App {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: var(--font);
+  transition: all 0.3s ease;
+  .header {
+    padding: 10px 0;
+    max-width: 350px;
+  }
+  h1 {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--deep-pink);
+  }
+  .calculator {
+    max-width: 350px;
+    min-height: 500px;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--rounded-border);
+    padding: 1rem;
+    .screen {
+      background-color: var(--dark-purple);
+      color: #fefefe;
+      padding: 2rem 0.7rem;
+      font-weight: 700;
+      font-size: 2rem;
+      justify-content: flex-end;
+      border-radius: var(--rounded-border);
+      box-shadow: var(--box-shadow);
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      overflow: hidden;
+      height: auto;
+      span {
+        color: black;
+        font-size: 1rem;
+        opacity: 0.4;
+        margin-right: 10px;
+      }
+    }
+    .buttons {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      .button {
+        background-color: #fff;
+        height: auto;
+        width: auto;
+        font-size: 2rem;
+        cursor: pointer;
+        padding: 10px;
+        box-shadow: var(--box-shadow);
+        border-radius: var(--rounded-border);
+        justify-content: center;
+        color: var(--deep-pink);
+        border: 2px solid #fff;
+        &.span-two {
+          width: auto;
+          grid-row: span 3;
+        }
+        &.span-all {
+          grid-column: 1/-1;
+        }
+        &:hover {
+          border: var(--purple-border);
+        }
+      }
+    }
+  }
+}
